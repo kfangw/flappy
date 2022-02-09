@@ -3,6 +3,7 @@ package kfangw.flappy.flappy;
 
 import "gogoproto/gogo.proto";
 import "flappy/params.proto";
+import "flappy/score.proto";
 // this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "github.com/kfangw/flappy/x/flappy/types";
@@ -10,5 +11,6 @@ option go_package = "github.com/kfangw/flappy/x/flappy/types";
 // GenesisState defines the flappy module's genesis state.
 message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
+  repeated Score scoreList = 2 [(gogoproto.nullable) = false];
   // this line is used by starport scaffolding # genesis/proto/state
 }

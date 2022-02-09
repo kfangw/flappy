@@ -1,0 +1,11 @@
+syntax = "proto3";
+package kfangw.flappy.flappy;
+
+option go_package = "github.com/kfangw/flappy/x/flappy/types";
+
+message Score {
+  string addr = 1; 
+  string score = 2; 
+  string creator = 3;
+}
+

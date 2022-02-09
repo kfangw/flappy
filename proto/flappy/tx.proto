@@ -1,13 +1,39 @@
 syntax = "proto3";
 package kfangw.flappy.flappy;
 
+import "flappy/score.proto";
 // this line is used by starport scaffolding # proto/tx/import
 
 option go_package = "github.com/kfangw/flappy/x/flappy/types";
 
 // Msg defines the Msg service.
 service Msg {
-    // this line is used by starport scaffolding # proto/tx/rpc
+      rpc CreateScore(MsgCreateScore) returns (MsgCreateScoreResponse);
+  rpc UpdateScore(MsgUpdateScore) returns (MsgUpdateScoreResponse);
+  rpc DeleteScore(MsgDeleteScore) returns (MsgDeleteScoreResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
 }
+
+message MsgCreateScore {
+  string creator = 1;
+  string addr = 2;
+
+  string score = 3;
+}
+message MsgCreateScoreResponse {}
+
+message MsgUpdateScore {
+  string creator = 1;
+  string addr = 2;
+
+  string score = 3;
+}
+message MsgUpdateScoreResponse {}
+
+message MsgDeleteScore {
+  string creator = 1;
+  string addr = 2;
+}
+message MsgDeleteScoreResponse {}
 
 // this line is used by starport scaffolding # proto/tx/message
